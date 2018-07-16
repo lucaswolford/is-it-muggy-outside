@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Is it muggy outside?
 
-Things you may want to cover:
+Check it out at https://pacific-everglades-28774.herokuapp.com/
 
-* Ruby version
+Ruby Version 2.5.1
+Ruby on Rails Version 5.2.0
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Open Weather Maps API (https://openweathermap.org)
