@@ -17,5 +17,6 @@ class MuggyCalculator
     muggy_scale = 2 if dew_point > 15.5556 # 60F
     muggy_scale = 3 if dew_point > 18.3333 # 65F
     muggy_scale = 4 if dew_point > 21.1111 # 70F
+    muggy_scale
   end
 end
