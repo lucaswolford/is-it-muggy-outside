@@ -8,23 +8,19 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @zip_code = params[:zip_code]
+    zip_code = params[:zip_code]
 
-    response = OpenWeatherMap.get_weather_by_zip(@zip_code)
+    if zip_code.size == 5 && zip_code !~ /\D/
+      muggy_scale = MuggyCalculator.get_muggy_scale_for_zip(zip_code)
+      set_response_for_scale(muggy_scale)
+    else
+      @response = "Please enter a 5 digit zip code"
+    end
+  end
 
-    @temp_k = response['main']['temp']
-    @temp_c = @temp_k - 273.15
+  private
 
-    @humidity = response['main']['humidity']
-
-    @dew_point = @temp_c - ((100 - @humidity) / 5);
-
-    muggy_scale = 0
-    muggy_scale = 1 if @dew_point > 12.7778 # 55F
-    muggy_scale = 2 if @dew_point > 15.5556 # 60F
-    muggy_scale = 3 if @dew_point > 18.3333 # 65F
-    muggy_scale = 4 if @dew_point > 21.1111 # 70F
-
+  def set_response_for_scale(muggy_scale)
     case muggy_scale
     when 4
       response = "Very Much So"
@@ -41,6 +37,8 @@ class LocationsController < ApplicationController
     when 0
       response = "Nope"
       color_class = "the-jakes-on-him"
+    else
+      response = "I was unable to find that location"
     end
     
     @response = response
