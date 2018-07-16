@@ -1,3 +1,69 @@
 // Place all the styles related to the locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #666;
+  background-color: #C8D6E7;
+}
+
+h1 {
+  text-align: center;
+}
+
+.zip {
+  text-align: center;
+
+  input {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.5em;
+  }
+
+  .text-input {
+    width: 200px;
+    margin-top: 10px;
+    text-align: center;
+    border-color: #C8D6E7;
+    color: #666;
+  }
+  .text-input:focus {
+    outline: none;
+    border-color: #D7C9E3;
+    box-shadow: 0 0 10px #D7C9E3;
+  }
+
+  .submit {
+    color: #666;
+    border: 2px solid #666;
+    background-color: transparent;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 25px;
+    height: 1.5em;
+  }
+}
+
+.fullscreen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.divine-intervention {
+  background-color: #E7BCDF;
+}
+.galactic-cool {
+  background-color: #D7C9E3;
+}
+.fair-haven {
+  background-color: #C8D6E7;
+}
+.smarty-pants {
+  background-color: #B8E3EB;
+}
+.the-jakes-on-him {
+  background-color: #A9F0F0;
+}

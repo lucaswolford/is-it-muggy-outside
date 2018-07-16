@@ -1,11 +1,11 @@
-<h1> Is it muggy outside? </h1>
+<h1> Is It Muggy Outside? </h1>
 
 <%= form_tag locations_path, method: :post do %>
 
-  <div>
-    <label> Zip: </label>
-    <%= text_field_tag "zip_code", '', placeholder: "Enter Zip Code" %>
-    <%= submit_tag "Check" %>
+  <div class='zip'>
+    <label> Enter your Zip Code </label>
+    <%= text_field_tag "zip_code", '', class: 'text-input' %>
+    <%= submit_tag "Check", class: 'submit' %>
   </div>
 
 <% end %>
